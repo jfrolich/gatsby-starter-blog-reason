@@ -1,0 +1,22 @@
+{
+  "name": "gatsby-starter-reasonml",
+  "refmt": 3,
+  "reason": {
+    "react-jsx": 3
+  },
+  "package-specs": {
+    "module": "es6",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "sources": [
+    {
+      "dir": "./src/",
+      "subdirs": true
+    }
+  ],
+  "ppx-flags": [
+    ["@jfrolich/graphql_ppx_re/ppx6", "-records", "-template-tag=graphql"]
+  ],
+  "bs-dependencies": ["reason-react", "@jfrolich/reason-gatsby"]
+}

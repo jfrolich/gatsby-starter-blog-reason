@@ -10,6 +10,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "@jfrolich/gatsby-plugin-extract-schema",
+      options: {
+        dest: `${__dirname}/graphql_schema.json`,
+      },
+    },
+    `@jfrolich/gatsby-plugin-reason`,
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

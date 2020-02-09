@@ -1,8 +1,9 @@
+// you can easily have js files coexist with reason files, like this page!
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { make as Layout } from "../components/Layout.bs"
+import { make as SEO } from "../components/SEO.bs"
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
