@@ -24,8 +24,8 @@ Enjoy!
 ## Functionality
 
 - GraphQL_PPX, all queries are typechecked!
-- Create pages using ReasonML files (with `@jfrolich/gatsby-plugin-reason`)
-- Gatsby functionality (with `@jfrolich/reason-gatsby`)
+- Create pages using ReasonML files (with [@jfrolich/gatsby-plugin-reason](https://github.com/jfrolich/gatsby-plugin-reason))
+- Gatsby functionality (with [@jfrolich/reason-gatsby](https://github.com/jfrolich/reason-gatsby))
 - This template includes (incomplete) bindings to `react-helmet` and `gatsby-image` -- potentially to be published later
 
 Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
