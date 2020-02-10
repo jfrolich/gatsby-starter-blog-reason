@@ -5,8 +5,28 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's blog starter
+  Gatsby's blog starter for ReasonML
 </h1>
+
+Get all Gatsby functionality, but be able to write everything in ReasonML.
+With previous implementation it was not possible to use (static) queries in
+ReasonML, so you manually had to type everything that came from a GraphQL query
+or just use ReasonML for simple components.
+
+This implementation uses an experimental build of GraphQL_PPX that has support
+for records and tagged template literals.
+
+We use a Gatsby plugin to generate the gatsby GraphQL schema as a JSON file, so
+GraphQL_PPX can generate types for each query.
+
+Enjoy!
+
+## Functionality
+
+- GraphQL_PPX, all queries are typechecked!
+- Create pages using ReasonML files (with `@jfrolich/gatsby-plugin-reason`)
+- Gatsby functionality (with `@jfrolich/reason-gatsby`)
+- This template includes (incomplete) bindings to `react-helmet` and `gatsby-image` -- potentially to be published later
 
 Kick off your project with this blog boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
