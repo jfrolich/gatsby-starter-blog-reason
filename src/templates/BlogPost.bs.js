@@ -116,25 +116,17 @@ function makeVar(f, slug, param) {
                 }));
 }
 
-function makeVariables(param, param$1) {
-  return serializeVariables({
-              slug: param
-            });
-}
-
-function makeWithVariables(variables) {
-  return {
-          query: query,
-          variables: serializeVariables(variables),
-          parse: parse
-        };
-}
-
 var definition = /* tuple */[
   parse,
   query,
   makeVar
 ];
+
+function makeVariables(param, param$1) {
+  return serializeVariables({
+              slug: param
+            });
+}
 
 function BlogPost(Props) {
   var data = Props.data;
@@ -160,27 +152,57 @@ function BlogPost(Props) {
                 var title = match$8;
                 var match$9 = pageContext.previous;
                 var tmp;
-                if (match$9 == null) {
+                if (match$9 !== undefined) {
+                  var match$10 = match$9;
+                  var match$11 = match$10.fields;
+                  if (match$11 !== undefined) {
+                    var match$12 = match$11.slug;
+                    if (match$12 !== undefined) {
+                      var match$13 = match$10.frontmatter;
+                      if (match$13 !== undefined) {
+                        var match$14 = match$13.title;
+                        tmp = match$14 !== undefined ? React.createElement(Gatsby.Link, {
+                                children: "← " + (String(match$14) + " "),
+                                to: match$12
+                              }) : null;
+                      } else {
+                        tmp = null;
+                      }
+                    } else {
+                      tmp = null;
+                    }
+                  } else {
+                    tmp = null;
+                  }
+                } else {
                   tmp = null;
-                } else {
-                  var slug = match$9.fields.slug;
-                  var title$1 = match$9.frontmatter.title;
-                  tmp = React.createElement(Gatsby.Link, {
-                        children: "← " + (String(title$1) + " "),
-                        to: slug
-                      });
                 }
-                var match$10 = pageContext.next;
+                var match$15 = pageContext.next;
                 var tmp$1;
-                if (match$10 == null) {
-                  tmp$1 = null;
+                if (match$15 !== undefined) {
+                  var match$16 = match$15;
+                  var match$17 = match$16.fields;
+                  if (match$17 !== undefined) {
+                    var match$18 = match$17.slug;
+                    if (match$18 !== undefined) {
+                      var match$19 = match$16.frontmatter;
+                      if (match$19 !== undefined) {
+                        var match$20 = match$19.title;
+                        tmp$1 = match$20 !== undefined ? React.createElement(Gatsby.Link, {
+                                children: "" + (String(match$20) + " →"),
+                                to: match$18
+                              }) : null;
+                      } else {
+                        tmp$1 = null;
+                      }
+                    } else {
+                      tmp$1 = null;
+                    }
+                  } else {
+                    tmp$1 = null;
+                  }
                 } else {
-                  var slug$1 = match$10.fields.slug;
-                  var title$2 = match$10.frontmatter.title;
-                  tmp$1 = React.createElement(Gatsby.Link, {
-                        children: "" + (String(title$2) + " →"),
-                        to: slug$1
-                      });
+                  tmp$1 = null;
                 }
                 return React.createElement(Layout.make, {
                             location: $$location,
@@ -243,20 +265,16 @@ var make = BlogPost;
 
 var $$default = BlogPost;
 
-var pageQuery = query;
-
 export {
   query ,
   parse ,
   serializeVariables ,
   makeVar ,
-  makeVariables ,
-  makeWithVariables ,
   definition ,
+  makeVariables ,
   make ,
   $$default ,
   $$default as default,
-  pageQuery ,
   
 }
 /* query Not a pure module */

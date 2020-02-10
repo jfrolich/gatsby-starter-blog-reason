@@ -48,24 +48,8 @@ function parse(value) {
         };
 }
 
-function serializeVariables(param) {
-  return null;
-}
-
 function makeVar(f, param) {
   return Curry._1(f, null);
-}
-
-function makeVariables(param) {
-  return null;
-}
-
-function makeWithVariables(variables) {
-  return {
-          query: query,
-          variables: null,
-          parse: parse
-        };
 }
 
 var definition = /* tuple */[
@@ -172,10 +156,7 @@ var $$default = SEO;
 export {
   query ,
   parse ,
-  serializeVariables ,
   makeVar ,
-  makeVariables ,
-  makeWithVariables ,
   definition ,
   make ,
   $$default ,

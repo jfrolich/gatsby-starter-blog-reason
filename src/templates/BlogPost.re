@@ -23,15 +23,9 @@ open Typography;
   {inline: true}
 ];
 
-type otherPage = {
-  .
-  "frontmatter": {. "title": string},
-  "fields": {. "slug": string},
-};
-
 type pageContext = {
-  previous: Js.Nullable.t(otherPage),
-  next: Js.Nullable.t(otherPage),
+  previous: option(NextPreviousFragment.t),
+  next: option(NextPreviousFragment.t),
 };
 
 [@react.component]
@@ -94,24 +88,26 @@ let make = (~data, ~pageContext: pageContext, ~location: Gatsby.location) => {
             (),
           )}>
           <li>
-            {switch (pageContext.previous->Js.Nullable.toOption) {
-             | Some(page) =>
-               let slug = page##fields##slug;
-               let title = page##frontmatter##title;
+            {switch (pageContext.previous) {
+             | Some({
+                 fields: Some({slug: Some(slug)}),
+                 frontmatter: Some({title: Some(title)}),
+               }) =>
                <Gatsby.Link _to=slug>
                  {j|← $title |j}->React.string
-               </Gatsby.Link>;
+               </Gatsby.Link>
              | _ => React.null
              }}
           </li>
           <li>
-            {switch (pageContext.next->Js.Nullable.toOption) {
-             | Some(page) =>
-               let slug = page##fields##slug;
-               let title = page##frontmatter##title;
+            {switch (pageContext.next) {
+             | Some({
+                 fields: Some({slug: Some(slug)}),
+                 frontmatter: Some({title: Some(title)}),
+               }) =>
                <Gatsby.Link _to=slug>
                  {j|$title →|j}->React.string
-               </Gatsby.Link>;
+               </Gatsby.Link>
              | _ => React.null
              }}
           </li>
@@ -123,4 +119,3 @@ let make = (~data, ~pageContext: pageContext, ~location: Gatsby.location) => {
 };
 
 let default = make;
-let pageQuery = query;

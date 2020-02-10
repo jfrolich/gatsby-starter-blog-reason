@@ -857,20 +857,20 @@
   dependencies:
     write "^1.0.3"
 
-"@jfrolich/gatsby-plugin-reason@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@jfrolich/gatsby-plugin-reason/-/gatsby-plugin-reason-0.1.1.tgz#a650fb39b40db76b1672640a11226bdb012f3a6e"
-  integrity sha512-g66w8Tv9463gBtm0GqbfK6Kn1zlpX18/BDr59W8f28hueMv+PMBeKnvnga6+IUcl2JR1uOeoa+WaZgDB/lQO8Q==
+"@jfrolich/gatsby-plugin-reason@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@jfrolich/gatsby-plugin-reason/-/gatsby-plugin-reason-0.1.4.tgz#9cfc87c3aabbead2babdb210499b870fb7b3a39b"
+  integrity sha512-JiEVOVjngoJZ6L39D9XMjTr+BLVt2FJ6sCtufKLYAyLJDd8cPEyNLnN4H61b72XFzV0f7qGiNVSJ9+arHGeMMA==
 
-"@jfrolich/graphql_ppx_re@^0.6.0-beta.11":
-  version "0.6.0-beta.11"
-  resolved "https://registry.yarnpkg.com/@jfrolich/graphql_ppx_re/-/graphql_ppx_re-0.6.0-beta.11.tgz#a4f94a4ac3b5a86e44ff9a9080edc447e57f4dfb"
-  integrity sha512-knRS1vdy0lU9zIVSwJJNF+TdK9FBuDk5Gwio29RaAJm1AtVdl7MPnk6mq7OLqfIWCXol+8nrjQ+iW0hP/FFjzw==
+"@jfrolich/graphql_ppx_re@^0.6.0-beta.14":
+  version "0.6.0-beta.14"
+  resolved "https://registry.yarnpkg.com/@jfrolich/graphql_ppx_re/-/graphql_ppx_re-0.6.0-beta.14.tgz#3dfe7481eb8cadd72ca53fffbba2b4fd6bf54e70"
+  integrity sha512-xdFgstM44qXLRV/svTiH0b4FjQY9LOrQ/54yuR+HgSJRGVZUXowMd8I4edCvb3Loi88KKr1j1XnPuBhaoUofWA==
 
-"@jfrolich/reason-gatsby@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@jfrolich/reason-gatsby/-/reason-gatsby-0.1.1.tgz#cfe22499c0b1a5384eb6bdd9f64d503dd6054ef6"
-  integrity sha512-HnQft+qeEmW1pnmaUeps6SE67+B4Q9edht6RkkkcsszwhGWQy5DQPeR4ILh8eYf7KEAIs2ebO4Nwef8jxKN45g==
+"@jfrolich/reason-gatsby@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@jfrolich/reason-gatsby/-/reason-gatsby-0.1.4.tgz#777fe7525b525020b552f14fe6ad706dcb95dbfe"
+  integrity sha512-cG24pY657ZV5kb7tQTa5GrjtGE9VuFLg+4sofmH6GP/XmAGgeLKGT49gxiddjxKvU1zrrvvvTsuCw2J/hS5L4w==
 
 "@jimp/bmp@^0.6.8":
   version "0.6.8"
@@ -4592,6 +4592,11 @@ eslint@^6.7.2:
     table "^5.2.3"
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
+
+esm@^3.2.25:
+  version "3.2.25"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.2.25.tgz#342c18c29d56157688ba5ce31f8431fbb795cc10"
+  integrity sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
 
 espree@^6.1.2:
   version "6.1.2"
