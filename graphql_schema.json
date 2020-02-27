@@ -14811,16 +14811,6 @@
               {
                 "defaultValue": null,
                 "description": "",
-                "name": "host",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "StringQueryOperatorInput",
-                  "ofType": null
-                }
-              },
-              {
-                "defaultValue": null,
-                "description": "",
                 "name": "id",
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -14865,16 +14855,6 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "BooleanQueryOperatorInput",
-                  "ofType": null
-                }
-              },
-              {
-                "defaultValue": null,
-                "description": "",
-                "name": "port",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "IntQueryOperatorInput",
                   "ofType": null
                 }
               },
@@ -15288,18 +15268,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "host",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            }
-          },
-          {
-            "args": [],
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "id",
             "type": {
               "kind": "NON_NULL",
@@ -15360,18 +15328,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
-              "ofType": null
-            }
-          },
-          {
-            "args": [],
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
-            "name": "port",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
               "ofType": null
             }
           },
@@ -15887,12 +15843,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "host"
-          },
-          {
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "id"
           },
           {
@@ -16187,12 +16137,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "port"
-          },
-          {
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "siteMetadata___author"
           },
           {
@@ -16255,16 +16199,6 @@
           {
             "defaultValue": null,
             "description": "",
-            "name": "host",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            }
-          },
-          {
-            "defaultValue": null,
-            "description": "",
             "name": "id",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -16309,16 +16243,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            }
-          },
-          {
-            "defaultValue": null,
-            "description": "",
-            "name": "port",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "IntQueryOperatorInput",
               "ofType": null
             }
           },
@@ -18263,6 +18187,12 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___backgroundColor"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pluginCreator___pluginOptions___background_color"
           },
           {
@@ -18275,6 +18205,18 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___disableBgImage"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___disableBgImageOnAlpha"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pluginCreator___pluginOptions___display"
           },
           {
@@ -18282,6 +18224,30 @@
             "description": null,
             "isDeprecated": false,
             "name": "pluginCreator___pluginOptions___icon"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___ignoreFileExtensions"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___linkImagesToOriginal"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___loading"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___markdownCaptions"
           },
           {
             "deprecationReason": null,
@@ -18306,6 +18272,12 @@
             "description": null,
             "isDeprecated": false,
             "name": "pluginCreator___pluginOptions___pathCheck"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___pathPrefix"
           },
           {
             "deprecationReason": null,
@@ -18365,6 +18337,12 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___showCaptions"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pluginCreator___pluginOptions___start_url"
           },
           {
@@ -18372,6 +18350,18 @@
             "description": null,
             "isDeprecated": false,
             "name": "pluginCreator___pluginOptions___theme_color"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___tracedSVG"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginCreator___pluginOptions___withWebp"
           },
           {
             "deprecationReason": null,
@@ -19802,6 +19792,12 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pluginOptions___backgroundColor"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pluginOptions___background_color"
           },
           {
@@ -19814,6 +19810,18 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pluginOptions___disableBgImage"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___disableBgImageOnAlpha"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pluginOptions___display"
           },
           {
@@ -19821,6 +19829,30 @@
             "description": null,
             "isDeprecated": false,
             "name": "pluginOptions___icon"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___ignoreFileExtensions"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___linkImagesToOriginal"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___loading"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___markdownCaptions"
           },
           {
             "deprecationReason": null,
@@ -19845,6 +19877,12 @@
             "description": null,
             "isDeprecated": false,
             "name": "pluginOptions___pathCheck"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___pathPrefix"
           },
           {
             "deprecationReason": null,
@@ -19886,7 +19924,73 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___backgroundColor"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___disableBgImage"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___ignoreFileExtensions"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___linkImagesToOriginal"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___loading"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___markdownCaptions"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pluginOptions___plugins___pluginOptions___maxWidth"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___pathPrefix"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___showCaptions"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___tracedSVG"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___plugins___pluginOptions___withWebp"
           },
           {
             "deprecationReason": null,
@@ -19916,6 +20020,12 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pluginOptions___showCaptions"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pluginOptions___start_url"
           },
           {
@@ -19923,6 +20033,18 @@
             "description": null,
             "isDeprecated": false,
             "name": "pluginOptions___theme_color"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___tracedSVG"
+          },
+          {
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pluginOptions___withWebp"
           },
           {
             "deprecationReason": null,
@@ -20744,6 +20866,18 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "backgroundColor",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "background_color",
             "type": {
               "kind": "SCALAR",
@@ -20768,6 +20902,30 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "disableBgImage",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "disableBgImageOnAlpha",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "display",
             "type": {
               "kind": "SCALAR",
@@ -20784,6 +20942,58 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "ignoreFileExtensions",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "linkImagesToOriginal",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "loading",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "markdownCaptions",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             }
           },
@@ -20840,6 +21050,18 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "pathPrefix",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "pathToConfigModule",
             "type": {
               "kind": "SCALAR",
@@ -20880,6 +21102,18 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "showCaptions",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "start_url",
             "type": {
               "kind": "SCALAR",
@@ -20896,6 +21130,30 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "tracedSVG",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "withWebp",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             }
           },
@@ -20926,6 +21184,16 @@
           {
             "defaultValue": null,
             "description": "",
+            "name": "backgroundColor",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
             "name": "background_color",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -20946,6 +21214,26 @@
           {
             "defaultValue": null,
             "description": "",
+            "name": "disableBgImage",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "disableBgImageOnAlpha",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
             "name": "display",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -20960,6 +21248,46 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "ignoreFileExtensions",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "linkImagesToOriginal",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "loading",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "markdownCaptions",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
               "ofType": null
             }
           },
@@ -21006,6 +21334,16 @@
           {
             "defaultValue": null,
             "description": "",
+            "name": "pathPrefix",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
             "name": "pathToConfigModule",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -21036,6 +21374,16 @@
           {
             "defaultValue": null,
             "description": "",
+            "name": "showCaptions",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
             "name": "start_url",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -21050,6 +21398,26 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "tracedSVG",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "withWebp",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
               "ofType": null
             }
           },
@@ -21279,10 +21647,146 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
+            "name": "backgroundColor",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "disableBgImage",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "disableBgImageOnAlpha",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "ignoreFileExtensions",
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "linkImagesToOriginal",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "loading",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "markdownCaptions",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
             "name": "maxWidth",
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "pathPrefix",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "showCaptions",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "tracedSVG",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "withWebp",
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             }
           },
@@ -21313,10 +21817,120 @@
           {
             "defaultValue": null,
             "description": "",
+            "name": "backgroundColor",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "disableBgImage",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "disableBgImageOnAlpha",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "ignoreFileExtensions",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "linkImagesToOriginal",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "loading",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "markdownCaptions",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
             "name": "maxWidth",
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "IntQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "pathPrefix",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "showCaptions",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "tracedSVG",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "withWebp",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
               "ofType": null
             }
           },
