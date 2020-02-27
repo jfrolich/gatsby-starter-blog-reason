@@ -12,7 +12,7 @@
     "@jfrolich/gatsby-plugin-reason": "^0.1.4",
     "@jfrolich/graphql_ppx_re": "^0.6.0-beta.14",
     "@jfrolich/reason-gatsby": "^0.1.4",
-    "bs-platform": "^7.1.0",
+    "bs-platform": "^7.1.1",
     "esm": "^3.2.25",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
@@ -41,7 +41,8 @@
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-wordpress-2016": "^0.16.19",
+    "babel-plugin-remove-graphql-queries": "2.7.23"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
@@ -57,6 +58,7 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
+    "postinstall": "patch-package && bsb -clean-world -make-world",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
