@@ -8,6 +8,9 @@ import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as GatsbyImage from "../bindings/gatsby-image/GatsbyImage.bs.js";
 import * as GatsbyImage$1 from "gatsby-image";
 
+let { graphql } = require("gatsby")
+;
+
 var query = (graphql`
   query BioQuery  {
   avatar: file(absolutePath: {regex: "/profile-pic.jpg/"})  {
@@ -168,4 +171,4 @@ export {
   make ,
   
 }
-/* query Not a pure module */
+/*  Not a pure module */

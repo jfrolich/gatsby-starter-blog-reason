@@ -20,7 +20,15 @@
     }
   ],
   "ppx-flags": [
-    ["@jfrolich/graphql_ppx_re/ppx6", "-records", "-template-tag=graphql"]
+    [
+      "@baransu/graphql_ppx_re/ppx",
+      "-records",
+      "-template-tag-import=graphql",
+      "-template-tag-location=gatsby"
+    ]
   ],
-  "bs-dependencies": ["reason-react", "@jfrolich/reason-gatsby"]
+  "bs-dependencies": ["reason-react", "@jfrolich/reason-gatsby"],
+  "warnings": {
+    "number": "-30"
+  }
 }

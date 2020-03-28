@@ -7,6 +7,9 @@ import * as Belt_Array from "bs-platform/lib/es6/belt_Array.js";
 import * as Belt_Option from "bs-platform/lib/es6/belt_Option.js";
 import * as ReactHelmet from "react-helmet";
 
+let { graphql } = require("gatsby")
+;
+
 var query = (graphql`
   query SEO  {
     site  {
@@ -60,11 +63,11 @@ var definition = /* tuple */[
 
 function SEO(Props) {
   var description = Props.description;
-  var $staropt$star = Props.lang;
-  var $staropt$star$1 = Props.meta;
+  var langOpt = Props.lang;
+  var passedMetaOpt = Props.meta;
   var title = Props.title;
-  var lang = $staropt$star !== undefined ? $staropt$star : "en";
-  var passedMeta = $staropt$star$1 !== undefined ? $staropt$star$1 : [];
+  var lang = langOpt !== undefined ? langOpt : "en";
+  var passedMeta = passedMetaOpt !== undefined ? passedMetaOpt : [];
   var site = parse(Gatsby.useStaticQuery(query)).site;
   var metaTitle;
   if (site !== undefined) {
@@ -163,4 +166,4 @@ export {
   $$default as default,
   
 }
-/* query Not a pure module */
+/*  Not a pure module */

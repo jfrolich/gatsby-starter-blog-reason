@@ -13,6 +13,9 @@ import * as Typography from "../utils/Typography.bs.js";
 import * as Belt_Option from "bs-platform/lib/es6/belt_Option.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 
+let { graphql } = require("gatsby")
+;
+
 var query = (graphql`
   query BlogPostBySlug($slug: String!)  {
     site  {
@@ -277,4 +280,4 @@ export {
   $$default as default,
   
 }
-/* query Not a pure module */
+/*  Not a pure module */
