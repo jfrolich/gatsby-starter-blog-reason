@@ -13,7 +13,10 @@ open Typography;
       }
       site {
         siteMetadata {
-          author
+          author {
+            name
+            summary
+          }
           social {
             twitter
           }
@@ -56,7 +59,7 @@ let make = () => {
      | Some(fixed) =>
        <GatsbyImage
          fixed
-         alt=?author
+         alt=?(author->Belt.Option.flatMap(a => a.name))
          style={ReactDOMRe.Style.make(
            ~marginRight=rhythm(0.5),
            ~marginBottom="0px",
@@ -68,12 +71,11 @@ let make = () => {
      | None => React.null
      }}
     {switch (author, twitter) {
-     | (Some(author), Some(twitter)) =>
+     | (Some({name: Some(name), summary}), Some(twitter)) =>
        <p>
          "Written by "->React.string
-         <strong> author->React.string </strong>
-         " who lives and works in San Fransisco building useful things. "
-         ->React.string
+         <strong> name->React.string </strong>
+         {summary->Belt.Option.map(s => " " ++ s)->Belt.Option.getWithDefault("")->React.string}
          <a href={"https://twitter.com/" ++ twitter}>
            "You should follow him on Twitter"->React.string
          </a>

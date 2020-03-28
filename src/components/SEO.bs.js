@@ -16,7 +16,9 @@ var query = (graphql`
       siteMetadata  {
         title
         description
-        author
+        author  {
+          name
+        }
       }
     }
   }
@@ -36,10 +38,19 @@ function parse(value) {
       var value$3 = value$2["title"];
       var value$4 = value$2["description"];
       var value$5 = value$2["author"];
+      var tmp$2;
+      if (value$5 == null) {
+        tmp$2 = undefined;
+      } else {
+        var value$6 = value$5["name"];
+        tmp$2 = {
+          name: (value$6 == null) ? undefined : value$6
+        };
+      }
       tmp$1 = {
         title: (value$3 == null) ? undefined : value$3,
         description: (value$4 == null) ? undefined : value$4,
-        author: (value$5 == null) ? undefined : value$5
+        author: tmp$2
       };
     }
     tmp = {
@@ -79,7 +90,12 @@ function SEO(Props) {
   var author;
   if (site !== undefined) {
     var match$1 = site.siteMetadata;
-    author = match$1 !== undefined ? match$1.author : undefined;
+    if (match$1 !== undefined) {
+      var match$2 = match$1.author;
+      author = match$2 !== undefined ? match$2.name : undefined;
+    } else {
+      author = undefined;
+    }
   } else {
     author = undefined;
   }
@@ -87,10 +103,10 @@ function SEO(Props) {
   if (description !== undefined) {
     metaDescription = description;
   } else if (site !== undefined) {
-    var match$2 = site.siteMetadata;
-    if (match$2 !== undefined) {
-      var match$3 = match$2.description;
-      metaDescription = match$3 !== undefined ? match$3 : undefined;
+    var match$3 = site.siteMetadata;
+    if (match$3 !== undefined) {
+      var match$4 = match$3.description;
+      metaDescription = match$4 !== undefined ? match$4 : undefined;
     } else {
       metaDescription = undefined;
     }

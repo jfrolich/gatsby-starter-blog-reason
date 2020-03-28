@@ -5,7 +5,9 @@
         siteMetadata {
           title
           description
-          author
+          author {
+            name
+          }
         }
       }
     }
@@ -26,7 +28,7 @@ let make = (~description=?, ~lang="en", ~meta as passedMeta=[||], ~title) => {
 
   let author =
     switch (site) {
-    | Some({siteMetadata: Some({author})}) => author
+    | Some({siteMetadata: Some({author: Some({name})})}) => name
     | _ => None
     };
 

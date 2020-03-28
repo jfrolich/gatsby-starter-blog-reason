@@ -4,6 +4,7 @@ import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
 import * as Gatsby from "gatsby";
 import * as Typography from "../utils/Typography.bs.js";
+import * as Belt_Option from "bs-platform/lib/es6/belt_Option.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as GatsbyImage from "../bindings/gatsby-image/GatsbyImage.bs.js";
 import * as GatsbyImage$1 from "gatsby-image";
@@ -22,7 +23,10 @@ var query = (graphql`
   }
   site  {
     siteMetadata  {
-      author
+      author  {
+        name
+        summary
+      }
       social  {
         twitter
       }
@@ -62,19 +66,30 @@ function parse(value) {
       tmp$3 = undefined;
     } else {
       var value$6 = value$5["author"];
-      var value$7 = value$5["social"];
       var tmp$4;
-      if (value$7 == null) {
+      if (value$6 == null) {
         tmp$4 = undefined;
       } else {
-        var value$8 = value$7["twitter"];
+        var value$7 = value$6["name"];
+        var value$8 = value$6["summary"];
         tmp$4 = {
-          twitter: (value$8 == null) ? undefined : value$8
+          name: (value$7 == null) ? undefined : value$7,
+          summary: (value$8 == null) ? undefined : value$8
+        };
+      }
+      var value$9 = value$5["social"];
+      var tmp$5;
+      if (value$9 == null) {
+        tmp$5 = undefined;
+      } else {
+        var value$10 = value$9["twitter"];
+        tmp$5 = {
+          twitter: (value$10 == null) ? undefined : value$10
         };
       }
       tmp$3 = {
-        author: (value$6 == null) ? undefined : value$6,
-        social: tmp$4
+        author: tmp$4,
+        social: tmp$5
       };
     }
     tmp$2 = {
@@ -144,21 +159,34 @@ function Bio(Props) {
         borderRadius: "100%"
       }
     };
-    if (author !== undefined) {
-      tmp$1.alt = Caml_option.valFromOption(author);
+    var tmp$2 = Belt_Option.flatMap(author, (function (a) {
+            return a.name;
+          }));
+    if (tmp$2 !== undefined) {
+      tmp$1.alt = Caml_option.valFromOption(tmp$2);
     }
     tmp = React.createElement(GatsbyImage$1.default, tmp$1);
   } else {
     tmp = null;
+  }
+  var tmp$3;
+  if (author !== undefined) {
+    var match$8 = author;
+    var match$9 = match$8.name;
+    tmp$3 = match$9 !== undefined && twitter !== undefined ? React.createElement("p", undefined, "Written by ", React.createElement("strong", undefined, match$9), Belt_Option.getWithDefault(Belt_Option.map(match$8.summary, (function (s) {
+                      return " " + s;
+                    })), ""), React.createElement("a", {
+                href: "https://twitter.com/" + twitter
+              }, "You should follow him on Twitter")) : null;
+  } else {
+    tmp$3 = null;
   }
   return React.createElement("div", {
               style: {
                 display: "flex",
                 marginBottom: Typography.rhythm(2.5)
               }
-            }, tmp, author !== undefined && twitter !== undefined ? React.createElement("p", undefined, "Written by ", React.createElement("strong", undefined, author), " who lives and works in San Fransisco building useful things. ", React.createElement("a", {
-                        href: "https://twitter.com/" + twitter
-                      }, "You should follow him on Twitter")) : null);
+            }, tmp, tmp$3);
 }
 
 var make = Bio;

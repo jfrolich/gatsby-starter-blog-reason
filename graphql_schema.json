@@ -14885,16 +14885,6 @@
               {
                 "defaultValue": null,
                 "description": "",
-                "name": "host",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "StringQueryOperatorInput",
-                  "ofType": null
-                }
-              },
-              {
-                "defaultValue": null,
-                "description": "",
                 "name": "id",
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -14939,16 +14929,6 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "BooleanQueryOperatorInput",
-                  "ofType": null
-                }
-              },
-              {
-                "defaultValue": null,
-                "description": "",
-                "name": "port",
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "IntQueryOperatorInput",
                   "ofType": null
                 }
               },
@@ -15425,18 +15405,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "host",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            }
-          },
-          {
-            "args": [],
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "id",
             "type": {
               "kind": "NON_NULL",
@@ -15497,18 +15465,6 @@
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
-              "ofType": null
-            }
-          },
-          {
-            "args": [],
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
-            "name": "port",
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
               "ofType": null
             }
           },
@@ -17154,12 +17110,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "host"
-          },
-          {
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "id"
           },
           {
@@ -17454,13 +17404,13 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "port"
+            "name": "siteMetadata___author___name"
           },
           {
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "siteMetadata___author"
+            "name": "siteMetadata___author___summary"
           },
           {
             "deprecationReason": null,
@@ -17522,16 +17472,6 @@
           {
             "defaultValue": null,
             "description": "",
-            "name": "host",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            }
-          },
-          {
-            "defaultValue": null,
-            "description": "",
             "name": "id",
             "type": {
               "kind": "INPUT_OBJECT",
@@ -17576,16 +17516,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "BooleanQueryOperatorInput",
-              "ofType": null
-            }
-          },
-          {
-            "defaultValue": null,
-            "description": "",
-            "name": "port",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "IntQueryOperatorInput",
               "ofType": null
             }
           },
@@ -19344,12 +19274,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "pluginCreator___packageJson___author"
-          },
-          {
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "pluginCreator___packageJson___dependencies"
           },
           {
@@ -20805,12 +20729,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "packageJson___author"
-          },
-          {
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "packageJson___dependencies"
           },
           {
@@ -21690,18 +21608,6 @@
             "deprecationReason": null,
             "description": null,
             "isDeprecated": false,
-            "name": "author",
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            }
-          },
-          {
-            "args": [],
-            "deprecationReason": null,
-            "description": null,
-            "isDeprecated": false,
             "name": "dependencies",
             "type": {
               "kind": "LIST",
@@ -22007,16 +21913,6 @@
         "enumValues": null,
         "fields": null,
         "inputFields": [
-          {
-            "defaultValue": null,
-            "description": "",
-            "name": "author",
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            }
-          },
           {
             "defaultValue": null,
             "description": "",
@@ -23343,8 +23239,8 @@
             "isDeprecated": false,
             "name": "author",
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
+              "kind": "OBJECT",
+              "name": "SiteSiteMetadataAuthor",
               "ofType": null
             }
           },
@@ -23406,6 +23302,72 @@
       {
         "description": null,
         "enumValues": null,
+        "fields": [
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "name",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          },
+          {
+            "args": [],
+            "deprecationReason": null,
+            "description": null,
+            "isDeprecated": false,
+            "name": "summary",
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            }
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "kind": "OBJECT",
+        "name": "SiteSiteMetadataAuthor",
+        "possibleTypes": null
+      },
+      {
+        "description": null,
+        "enumValues": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "name",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          },
+          {
+            "defaultValue": null,
+            "description": "",
+            "name": "summary",
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            }
+          }
+        ],
+        "interfaces": null,
+        "kind": "INPUT_OBJECT",
+        "name": "SiteSiteMetadataAuthorFilterInput",
+        "possibleTypes": null
+      },
+      {
+        "description": null,
+        "enumValues": null,
         "fields": null,
         "inputFields": [
           {
@@ -23414,7 +23376,7 @@
             "name": "author",
             "type": {
               "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
+              "name": "SiteSiteMetadataAuthorFilterInput",
               "ofType": null
             }
           },
