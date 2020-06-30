@@ -74,3 +74,4 @@ lib
 .bsb.lock
 /lib/bs/
 .graphql_ppx_cache
+.vscode/settings.json

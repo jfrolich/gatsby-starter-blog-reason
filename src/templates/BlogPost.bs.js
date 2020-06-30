@@ -2,19 +2,16 @@
 
 import * as Bio from "../components/Bio.bs.js";
 import * as SEO from "../components/SEO.bs.js";
-import * as Curry from "bs-platform/lib/es6/curry.js";
 import * as React from "react";
 import * as Layout from "../components/Layout.bs.js";
 import * as Gatsby from "gatsby";
-import * as Js_dict from "bs-platform/lib/es6/js_dict.js";
 import * as Js_json from "bs-platform/lib/es6/js_json.js";
 import * as ReactDOMRe from "reason-react/src/ReactDOMRe.js";
 import * as Typography from "../utils/Typography.bs.js";
 import * as Belt_Option from "bs-platform/lib/es6/belt_Option.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 
-let { graphql } = require("gatsby")
-;
+var Raw = {};
 
 var query = (graphql`
   query BlogPostBySlug($slug: String!)  {
@@ -37,50 +34,50 @@ var query = (graphql`
 `);
 
 function parse(value) {
-  var value$1 = value["site"];
+  var value$1 = value.site;
   var tmp;
   if (value$1 == null) {
     tmp = undefined;
   } else {
-    var value$2 = value$1["siteMetadata"];
+    var value$2 = value$1.siteMetadata;
     var tmp$1;
     if (value$2 == null) {
       tmp$1 = undefined;
     } else {
-      var value$3 = value$2["title"];
+      var value$3 = value$2.title;
       tmp$1 = {
-        title: (value$3 == null) ? undefined : value$3
+        title: !(value$3 == null) ? value$3 : undefined
       };
     }
     tmp = {
       siteMetadata: tmp$1
     };
   }
-  var value$4 = value["markdownRemark"];
+  var value$4 = value.markdownRemark;
   var tmp$2;
   if (value$4 == null) {
     tmp$2 = undefined;
   } else {
-    var value$5 = value$4["excerpt"];
-    var value$6 = value$4["html"];
-    var value$7 = value$4["frontmatter"];
+    var value$5 = value$4.excerpt;
+    var value$6 = value$4.html;
+    var value$7 = value$4.frontmatter;
     var tmp$3;
     if (value$7 == null) {
       tmp$3 = undefined;
     } else {
-      var value$8 = value$7["title"];
-      var value$9 = value$7["date"];
-      var value$10 = value$7["description"];
+      var value$8 = value$7.title;
+      var value$9 = value$7.date;
+      var value$10 = value$7.description;
       tmp$3 = {
-        title: (value$8 == null) ? undefined : value$8,
-        date: (value$9 == null) ? undefined : Caml_option.some(value$9),
-        description: (value$10 == null) ? undefined : value$10
+        title: !(value$8 == null) ? value$8 : undefined,
+        date: !(value$9 == null) ? Caml_option.some(value$9) : undefined,
+        description: !(value$10 == null) ? value$10 : undefined
       };
     }
     tmp$2 = {
-      id: value$4["id"],
-      excerpt: (value$5 == null) ? undefined : value$5,
-      html: (value$6 == null) ? undefined : value$6,
+      id: value$4.id,
+      excerpt: !(value$5 == null) ? value$5 : undefined,
+      html: !(value$6 == null) ? value$6 : undefined,
       frontmatter: tmp$3
     };
   }
@@ -90,46 +87,83 @@ function parse(value) {
         };
 }
 
+function serialize(value) {
+  var value$1 = value.markdownRemark;
+  var markdownRemark;
+  if (value$1 !== undefined) {
+    var value$2 = value$1.frontmatter;
+    var frontmatter;
+    if (value$2 !== undefined) {
+      var value$3 = value$2.description;
+      var description = value$3 !== undefined ? value$3 : null;
+      var value$4 = value$2.date;
+      var date = value$4 !== undefined ? Caml_option.valFromOption(value$4) : null;
+      var value$5 = value$2.title;
+      var title = value$5 !== undefined ? value$5 : null;
+      frontmatter = {
+        title: title,
+        date: date,
+        description: description
+      };
+    } else {
+      frontmatter = null;
+    }
+    var value$6 = value$1.html;
+    var html = value$6 !== undefined ? value$6 : null;
+    var value$7 = value$1.excerpt;
+    var excerpt = value$7 !== undefined ? value$7 : null;
+    var value$8 = value$1.id;
+    markdownRemark = {
+      id: value$8,
+      excerpt: excerpt,
+      html: html,
+      frontmatter: frontmatter
+    };
+  } else {
+    markdownRemark = null;
+  }
+  var value$9 = value.site;
+  var site;
+  if (value$9 !== undefined) {
+    var value$10 = value$9.siteMetadata;
+    var siteMetadata;
+    if (value$10 !== undefined) {
+      var value$11 = value$10.title;
+      var title$1 = value$11 !== undefined ? value$11 : null;
+      siteMetadata = {
+        title: title$1
+      };
+    } else {
+      siteMetadata = null;
+    }
+    site = {
+      siteMetadata: siteMetadata
+    };
+  } else {
+    site = null;
+  }
+  return {
+          site: site,
+          markdownRemark: markdownRemark
+        };
+}
+
 function serializeVariables(inp) {
-  return Js_dict.fromArray([/* tuple */[
-                    "slug",
-                    Caml_option.some(inp.slug)
-                  ]].filter((function (param) {
-                      return param[1] !== undefined;
-                    })).map((function (param) {
-                    var match = param[1];
-                    var k = param[0];
-                    if (match !== undefined) {
-                      return /* tuple */[
-                              k,
-                              Caml_option.valFromOption(match)
-                            ];
-                    } else {
-                      return /* tuple */[
-                              k,
-                              null
-                            ];
-                    }
-                  })));
+  return {
+          slug: inp.slug
+        };
 }
 
-function makeVar(f, slug, param) {
-  return Curry._1(f, serializeVariables({
-                  slug: slug
-                }));
+function makeVariables(slug, param) {
+  return {
+          slug: slug
+        };
 }
 
-var definition = /* tuple */[
-  parse,
-  query,
-  makeVar
-];
-
-function makeVariables(param, param$1) {
-  return serializeVariables({
-              slug: param
-            });
-}
+var Z__INTERNAL = {
+  _graphql_fields_153: 0,
+  graphql_module: 0
+};
 
 function BlogPost(Props) {
   var data = Props.data;
@@ -137,131 +171,119 @@ function BlogPost(Props) {
   var $$location = Props.location;
   var data$1 = parse(data);
   var match = data$1.site;
-  if (match !== undefined) {
-    var match$1 = match.siteMetadata;
-    if (match$1 !== undefined) {
-      var match$2 = match$1.title;
-      if (match$2 !== undefined) {
-        var match$3 = data$1.markdownRemark;
-        if (match$3 !== undefined) {
-          var match$4 = match$3;
-          var match$5 = match$4.html;
-          if (match$5 !== undefined) {
-            var match$6 = match$4.frontmatter;
-            if (match$6 !== undefined) {
-              var match$7 = match$6;
-              var match$8 = match$7.title;
-              if (match$8 !== undefined) {
-                var title = match$8;
-                var match$9 = pageContext.previous;
-                var tmp;
-                if (match$9 !== undefined) {
-                  var match$10 = match$9;
-                  var match$11 = match$10.fields;
-                  if (match$11 !== undefined) {
-                    var match$12 = match$11.slug;
-                    if (match$12 !== undefined) {
-                      var match$13 = match$10.frontmatter;
-                      if (match$13 !== undefined) {
-                        var match$14 = match$13.title;
-                        tmp = match$14 !== undefined ? React.createElement(Gatsby.Link, {
-                                children: "← " + (String(match$14) + " "),
-                                to: match$12
-                              }) : null;
-                      } else {
-                        tmp = null;
-                      }
-                    } else {
-                      tmp = null;
-                    }
-                  } else {
-                    tmp = null;
-                  }
-                } else {
-                  tmp = null;
-                }
-                var match$15 = pageContext.next;
-                var tmp$1;
-                if (match$15 !== undefined) {
-                  var match$16 = match$15;
-                  var match$17 = match$16.fields;
-                  if (match$17 !== undefined) {
-                    var match$18 = match$17.slug;
-                    if (match$18 !== undefined) {
-                      var match$19 = match$16.frontmatter;
-                      if (match$19 !== undefined) {
-                        var match$20 = match$19.title;
-                        tmp$1 = match$20 !== undefined ? React.createElement(Gatsby.Link, {
-                                children: "" + (String(match$20) + " →"),
-                                to: match$18
-                              }) : null;
-                      } else {
-                        tmp$1 = null;
-                      }
-                    } else {
-                      tmp$1 = null;
-                    }
-                  } else {
-                    tmp$1 = null;
-                  }
-                } else {
-                  tmp$1 = null;
-                }
-                return React.createElement(Layout.make, {
-                            location: $$location,
-                            title: match$2,
-                            children: null
-                          }, React.createElement(SEO.make, {
-                                description: Belt_Option.getWithDefault(match$7.description, Belt_Option.getWithDefault(match$4.excerpt, "")),
-                                title: title
-                              }), React.createElement("article", undefined, React.createElement("header", undefined, React.createElement("h1", {
-                                        style: {
-                                          marginTop: Typography.rhythm(1),
-                                          marginBottom: "0px"
-                                        }
-                                      }, title), React.createElement("p", {
-                                        style: ReactDOMRe.Style.combine(Typography.scale(-1 / 5), {
-                                              display: "block",
-                                              marginBottom: Typography.rhythm(1)
-                                            })
-                                      }, Belt_Option.getWithDefault(Belt_Option.flatMap(match$7.date, Js_json.decodeString), ""))), React.createElement("section", {
-                                    dangerouslySetInnerHTML: {
-                                      __html: match$5
-                                    }
-                                  }), React.createElement("hr", {
-                                    style: {
-                                      marginBottom: Typography.rhythm(1)
-                                    }
-                                  }), React.createElement("footer", undefined, React.createElement(Bio.make, { }))), React.createElement("nav", undefined, React.createElement("ul", {
-                                    style: {
-                                      display: "flex",
-                                      listStyle: "none",
-                                      padding: "0px",
-                                      flexWrap: "wrap",
-                                      justifyContent: "space-between"
-                                    }
-                                  }, React.createElement("li", undefined, tmp), React.createElement("li", undefined, tmp$1))));
-              } else {
-                return null;
-              }
-            } else {
-              return null;
-            }
-          } else {
-            return null;
-          }
-        } else {
-          return null;
-        }
-      } else {
-        return null;
-      }
-    } else {
-      return null;
-    }
-  } else {
+  if (match === undefined) {
     return null;
   }
+  var match$1 = match.siteMetadata;
+  if (match$1 === undefined) {
+    return null;
+  }
+  var siteTitle = match$1.title;
+  if (siteTitle === undefined) {
+    return null;
+  }
+  var match$2 = data$1.markdownRemark;
+  if (match$2 === undefined) {
+    return null;
+  }
+  var html = match$2.html;
+  if (html === undefined) {
+    return null;
+  }
+  var match$3 = match$2.frontmatter;
+  if (match$3 === undefined) {
+    return null;
+  }
+  var title = match$3.title;
+  if (title === undefined) {
+    return null;
+  }
+  var match$4 = pageContext.previous;
+  var tmp;
+  if (match$4 !== undefined) {
+    var match$5 = match$4.fields;
+    if (match$5 !== undefined) {
+      var slug = match$5.slug;
+      if (slug !== undefined) {
+        var match$6 = match$4.frontmatter;
+        if (match$6 !== undefined) {
+          var title$1 = match$6.title;
+          tmp = title$1 !== undefined ? React.createElement(Gatsby.Link, {
+                  children: "← " + title$1 + " ",
+                  to: slug
+                }) : null;
+        } else {
+          tmp = null;
+        }
+      } else {
+        tmp = null;
+      }
+    } else {
+      tmp = null;
+    }
+  } else {
+    tmp = null;
+  }
+  var match$7 = pageContext.next;
+  var tmp$1;
+  if (match$7 !== undefined) {
+    var match$8 = match$7.fields;
+    if (match$8 !== undefined) {
+      var slug$1 = match$8.slug;
+      if (slug$1 !== undefined) {
+        var match$9 = match$7.frontmatter;
+        if (match$9 !== undefined) {
+          var title$2 = match$9.title;
+          tmp$1 = title$2 !== undefined ? React.createElement(Gatsby.Link, {
+                  children: "" + title$2 + " →",
+                  to: slug$1
+                }) : null;
+        } else {
+          tmp$1 = null;
+        }
+      } else {
+        tmp$1 = null;
+      }
+    } else {
+      tmp$1 = null;
+    }
+  } else {
+    tmp$1 = null;
+  }
+  return React.createElement(Layout.make, {
+              location: $$location,
+              title: siteTitle,
+              children: null
+            }, React.createElement(SEO.make, {
+                  description: Belt_Option.getWithDefault(match$3.description, Belt_Option.getWithDefault(match$2.excerpt, "")),
+                  title: title
+                }), React.createElement("article", undefined, React.createElement("header", undefined, React.createElement("h1", {
+                          style: {
+                            marginTop: Typography.rhythm(1),
+                            marginBottom: "0px"
+                          }
+                        }, title), React.createElement("p", {
+                          style: ReactDOMRe.Style.combine(Typography.scale(-1 / 5), {
+                                display: "block",
+                                marginBottom: Typography.rhythm(1)
+                              })
+                        }, Belt_Option.getWithDefault(Belt_Option.flatMap(match$3.date, Js_json.decodeString), ""))), React.createElement("section", {
+                      dangerouslySetInnerHTML: {
+                        __html: html
+                      }
+                    }), React.createElement("hr", {
+                      style: {
+                        marginBottom: Typography.rhythm(1)
+                      }
+                    }), React.createElement("footer", undefined, React.createElement(Bio.make, {}))), React.createElement("nav", undefined, React.createElement("ul", {
+                      style: {
+                        display: "flex",
+                        listStyle: "none",
+                        padding: "0px",
+                        flexWrap: "wrap",
+                        justifyContent: "space-between"
+                      }
+                    }, React.createElement("li", undefined, tmp), React.createElement("li", undefined, tmp$1))));
 }
 
 var make = BlogPost;
@@ -269,15 +291,16 @@ var make = BlogPost;
 var $$default = BlogPost;
 
 export {
+  Raw ,
   query ,
   parse ,
+  serialize ,
   serializeVariables ,
-  makeVar ,
-  definition ,
   makeVariables ,
+  Z__INTERNAL ,
   make ,
   $$default ,
   $$default as default,
   
 }
-/*  Not a pure module */
+/* query Not a pure module */

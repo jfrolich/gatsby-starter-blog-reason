@@ -9,8 +9,7 @@ import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as GatsbyImage from "../bindings/gatsby-image/GatsbyImage.bs.js";
 import * as GatsbyImage$1 from "gatsby-image";
 
-let { graphql } = require("gatsby")
-;
+var Raw = {};
 
 var query = (graphql`
   query BioQuery  {
@@ -36,55 +35,55 @@ var query = (graphql`
 `);
 
 function parse(value) {
-  var value$1 = value["avatar"];
+  var value$1 = value.avatar;
   var tmp;
   if (value$1 == null) {
     tmp = undefined;
   } else {
-    var value$2 = value$1["childImageSharp"];
+    var value$2 = value$1.childImageSharp;
     var tmp$1;
     if (value$2 == null) {
       tmp$1 = undefined;
     } else {
-      var value$3 = value$2["fixed"];
+      var value$3 = value$2.fixed;
       tmp$1 = {
-        fixed: (value$3 == null) ? undefined : Curry._1(GatsbyImage.Fragments.GatsbyImageSharpFixed.parse, value$3)
+        fixed: !(value$3 == null) ? Curry._1(GatsbyImage.Fragments.GatsbyImageSharpFixed.verifyArgsAndParse, value$3) : undefined
       };
     }
     tmp = {
       childImageSharp: tmp$1
     };
   }
-  var value$4 = value["site"];
+  var value$4 = value.site;
   var tmp$2;
   if (value$4 == null) {
     tmp$2 = undefined;
   } else {
-    var value$5 = value$4["siteMetadata"];
+    var value$5 = value$4.siteMetadata;
     var tmp$3;
     if (value$5 == null) {
       tmp$3 = undefined;
     } else {
-      var value$6 = value$5["author"];
+      var value$6 = value$5.author;
       var tmp$4;
       if (value$6 == null) {
         tmp$4 = undefined;
       } else {
-        var value$7 = value$6["name"];
-        var value$8 = value$6["summary"];
+        var value$7 = value$6.name;
+        var value$8 = value$6.summary;
         tmp$4 = {
-          name: (value$7 == null) ? undefined : value$7,
-          summary: (value$8 == null) ? undefined : value$8
+          name: !(value$7 == null) ? value$7 : undefined,
+          summary: !(value$8 == null) ? value$8 : undefined
         };
       }
-      var value$9 = value$5["social"];
+      var value$9 = value$5.social;
       var tmp$5;
       if (value$9 == null) {
         tmp$5 = undefined;
       } else {
-        var value$10 = value$9["twitter"];
+        var value$10 = value$9.twitter;
         tmp$5 = {
-          twitter: (value$10 == null) ? undefined : value$10
+          twitter: !(value$10 == null) ? value$10 : undefined
         };
       }
       tmp$3 = {
@@ -102,15 +101,92 @@ function parse(value) {
         };
 }
 
-function makeVar(f, param) {
-  return Curry._1(f, null);
+function serialize(value) {
+  var value$1 = value.site;
+  var site;
+  if (value$1 !== undefined) {
+    var value$2 = value$1.siteMetadata;
+    var siteMetadata;
+    if (value$2 !== undefined) {
+      var value$3 = value$2.social;
+      var social;
+      if (value$3 !== undefined) {
+        var value$4 = value$3.twitter;
+        var twitter = value$4 !== undefined ? value$4 : null;
+        social = {
+          twitter: twitter
+        };
+      } else {
+        social = null;
+      }
+      var value$5 = value$2.author;
+      var author;
+      if (value$5 !== undefined) {
+        var value$6 = value$5.summary;
+        var summary = value$6 !== undefined ? value$6 : null;
+        var value$7 = value$5.name;
+        var name = value$7 !== undefined ? value$7 : null;
+        author = {
+          name: name,
+          summary: summary
+        };
+      } else {
+        author = null;
+      }
+      siteMetadata = {
+        author: author,
+        social: social
+      };
+    } else {
+      siteMetadata = null;
+    }
+    site = {
+      siteMetadata: siteMetadata
+    };
+  } else {
+    site = null;
+  }
+  var value$8 = value.avatar;
+  var avatar;
+  if (value$8 !== undefined) {
+    var value$9 = value$8.childImageSharp;
+    var childImageSharp;
+    if (value$9 !== undefined) {
+      var value$10 = value$9.fixed;
+      var fixed = value$10 !== undefined ? Curry._1(GatsbyImage.Fragments.GatsbyImageSharpFixed.serialize, value$10) : null;
+      childImageSharp = {
+        fixed: fixed
+      };
+    } else {
+      childImageSharp = null;
+    }
+    avatar = {
+      childImageSharp: childImageSharp
+    };
+  } else {
+    avatar = null;
+  }
+  return {
+          avatar: avatar,
+          site: site
+        };
 }
 
-var definition = /* tuple */[
-  parse,
-  query,
-  makeVar
-];
+function serializeVariables(param) {
+  
+}
+
+function makeVariables(param) {
+  
+}
+
+function makeDefaultVariables(param) {
+  
+}
+
+var Z__INTERNAL = {
+  graphql_module: 0
+};
 
 function Bio(Props) {
   var data = parse(Gatsby.useStaticQuery(query));
@@ -119,29 +195,29 @@ function Bio(Props) {
   if (match !== undefined) {
     var match$1 = match.childImageSharp;
     if (match$1 !== undefined) {
-      var match$2 = match$1.fixed;
-      fixedImage = match$2 !== undefined ? [match$2] : undefined;
+      var fixedImage$1 = match$1.fixed;
+      fixedImage = fixedImage$1 !== undefined ? [fixedImage$1] : undefined;
     } else {
       fixedImage = undefined;
     }
   } else {
     fixedImage = undefined;
   }
-  var match$3 = data.site;
+  var match$2 = data.site;
   var author;
-  if (match$3 !== undefined) {
-    var match$4 = match$3.siteMetadata;
-    author = match$4 !== undefined ? match$4.author : undefined;
+  if (match$2 !== undefined) {
+    var match$3 = match$2.siteMetadata;
+    author = match$3 !== undefined ? match$3.author : undefined;
   } else {
     author = undefined;
   }
-  var match$5 = data.site;
+  var match$4 = data.site;
   var twitter;
-  if (match$5 !== undefined) {
-    var match$6 = match$5.siteMetadata;
-    if (match$6 !== undefined) {
-      var match$7 = match$6.social;
-      twitter = match$7 !== undefined ? match$7.twitter : undefined;
+  if (match$4 !== undefined) {
+    var match$5 = match$4.siteMetadata;
+    if (match$5 !== undefined) {
+      var match$6 = match$5.social;
+      twitter = match$6 !== undefined ? match$6.twitter : undefined;
     } else {
       twitter = undefined;
     }
@@ -171,9 +247,8 @@ function Bio(Props) {
   }
   var tmp$3;
   if (author !== undefined) {
-    var match$8 = author;
-    var match$9 = match$8.name;
-    tmp$3 = match$9 !== undefined && twitter !== undefined ? React.createElement("p", undefined, "Written by ", React.createElement("strong", undefined, match$9), Belt_Option.getWithDefault(Belt_Option.map(match$8.summary, (function (s) {
+    var name = author.name;
+    tmp$3 = name !== undefined && twitter !== undefined ? React.createElement("p", undefined, "Written by ", React.createElement("strong", undefined, name), Belt_Option.getWithDefault(Belt_Option.map(author.summary, (function (s) {
                       return " " + s;
                     })), ""), React.createElement("a", {
                 href: "https://twitter.com/" + twitter
@@ -192,11 +267,15 @@ function Bio(Props) {
 var make = Bio;
 
 export {
+  Raw ,
   query ,
   parse ,
-  makeVar ,
-  definition ,
+  serialize ,
+  serializeVariables ,
+  makeVariables ,
+  makeDefaultVariables ,
+  Z__INTERNAL ,
   make ,
   
 }
-/*  Not a pure module */
+/* query Not a pure module */

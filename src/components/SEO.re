@@ -18,7 +18,7 @@
 [@react.component]
 let make = (~description=?, ~lang="en", ~meta as passedMeta=[||], ~title) => {
   // We need to parse the query to get ReasonML runtime types.
-  let site = parse(Gatsby.useStaticQuery(query)).site;
+  let site = Gatsby.useStaticQuery(query)->unsafe_fromJson->parse.site;
 
   let metaTitle =
     switch (site) {

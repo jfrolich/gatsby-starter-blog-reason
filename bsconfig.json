@@ -20,14 +20,9 @@
     }
   ],
   "ppx-flags": [
-    [
-      "@baransu/graphql_ppx_re/ppx",
-      "-records",
-      "-template-tag-import=graphql",
-      "-template-tag-location=gatsby"
-    ]
+    ["@reasonml-community/graphql-ppx/ppx", "-template-tag=graphql"]
   ],
-  "bs-dependencies": ["reason-react", "@jfrolich/reason-gatsby"],
+  "bs-dependencies": ["reason-react", "reason-gatsby"],
   "warnings": {
     "number": "-30"
   }

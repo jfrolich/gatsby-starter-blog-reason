@@ -29,7 +29,7 @@ open Typography;
 
 [@react.component]
 let make = () => {
-  let data = parse(Gatsby.useStaticQuery(query));
+  let data = Gatsby.useStaticQuery(query)->unsafe_fromJson->parse;
   let fixedImage =
     switch (data.avatar) {
     | Some({childImageSharp: Some({fixed: Some(fixedImage)})}) =>
@@ -59,7 +59,7 @@ let make = () => {
      | Some(fixed) =>
        <GatsbyImage
          fixed
-         alt=?(author->Belt.Option.flatMap(a => a.name))
+         alt=?{author->Belt.Option.flatMap(a => a.name)}
          style={ReactDOMRe.Style.make(
            ~marginRight=rhythm(0.5),
            ~marginBottom="0px",
@@ -75,7 +75,10 @@ let make = () => {
        <p>
          "Written by "->React.string
          <strong> name->React.string </strong>
-         {summary->Belt.Option.map(s => " " ++ s)->Belt.Option.getWithDefault("")->React.string}
+         {summary
+          ->Belt.Option.map(s => " " ++ s)
+          ->Belt.Option.getWithDefault("")
+          ->React.string}
          <a href={"https://twitter.com/" ++ twitter}>
            "You should follow him on Twitter"->React.string
          </a>
