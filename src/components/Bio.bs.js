@@ -11,7 +11,7 @@ import * as GatsbyImage$1 from "gatsby-image";
 
 var Raw = {};
 
-var query = (graphql`
+var query = ((frag_0) => graphql`
   query BioQuery  {
   avatar: file(absolutePath: {regex: "/profile-pic.jpg/"})  {
     childImageSharp  {
@@ -32,7 +32,7 @@ var query = (graphql`
     }
   }
 }
-`);
+`)(GatsbyImage.Fragments.GatsbyImageSharpFixed.query);
 
 function parse(value) {
   var value$1 = value.avatar;

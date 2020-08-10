@@ -61,6 +61,10 @@ function serialize(value) {
         };
 }
 
+function verifyName(param) {
+  
+}
+
 var Z__INTERNAL = {
   graphql: 0,
   graphql_module: 0
@@ -68,15 +72,13 @@ var Z__INTERNAL = {
 
 var query = "fragment NextPrevious on MarkdownRemark   {\nfields  {\nslug  \n}\n\nfrontmatter  {\ntitle  \n}\n\n}\n";
 
-var name = "NextPrevious";
-
 export {
   query ,
   Raw ,
   parse ,
   verifyArgsAndParse ,
   serialize ,
-  name ,
+  verifyName ,
   Z__INTERNAL ,
   
 }

@@ -11,7 +11,7 @@
     "@jfrolich/gatsby-plugin-extract-schema": "^0.0.4",
     "@jfrolich/gatsby-plugin-reason": "^0.1.4",
     "@reasonml-community/graphql-ppx": "^1.0.0-beta.22",
-    "bs-platform": "^8.0.3",
+    "bs-platform": "^8.2.0",
     "esm": "^3.2.25",
     "gatsby": "^2.20.8",
     "gatsby-image": "^2.2.39",

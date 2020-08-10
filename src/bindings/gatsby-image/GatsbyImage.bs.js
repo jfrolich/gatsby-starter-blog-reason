@@ -42,6 +42,10 @@ function serialize(value) {
         };
 }
 
+function verifyName(param) {
+  
+}
+
 var Z__INTERNAL = {
   graphql: 0,
   graphql_module: 0
@@ -53,7 +57,7 @@ var GatsbyImageSharpFixed = {
   parse: parse,
   verifyArgsAndParse: verifyArgsAndParse,
   serialize: serialize,
-  name: "GatsbyImageSharpFixed",
+  verifyName: verifyName,
   Z__INTERNAL: Z__INTERNAL
 };
 
