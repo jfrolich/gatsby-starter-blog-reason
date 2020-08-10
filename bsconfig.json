@@ -20,7 +20,11 @@
     }
   ],
   "ppx-flags": [
-    ["@reasonml-community/graphql-ppx/ppx", "-template-tag=graphql"]
+    [
+      "@reasonml-community/graphql-ppx/ppx", 
+      "-template-tag=graphql", 
+      "-fragment-in-query=exclude"
+    ]
   ],
   "bs-dependencies": ["reason-react", "reason-gatsby"],
   "warnings": {
